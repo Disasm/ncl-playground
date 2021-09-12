@@ -1,3 +1,5 @@
 /.idea
 /synth.*
 /synth2.*
+*.sim
+*.vcd

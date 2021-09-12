@@ -9,5 +9,13 @@ synth2.blif: synth.blif
 synth2.v: synth2.blif ncl.v ncl.ys
 	yosys ncl.ys
 
+segment7.sim: segment7_tb.v synth2.v ncl_sim.v
+	iverilog -W all -o segment7.sim -s segment7_tb segment7_tb.v synth2.v ncl_sim.v
+
+segment7.vcd: segment7.sim
+	./segment7.sim
+
+sim: segment7.vcd
+
 clean:
-	rm -f synth.v synth.blif synth2.v synth2.blif
+	rm -f synth.v synth.blif synth2.v synth2.blif segment7.sim segment7.vcd
