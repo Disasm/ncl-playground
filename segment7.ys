@@ -1,0 +1,17 @@
+read_verilog segment7.v
+#read_liberty simple.lib
+
+proc
+opt
+techmap
+abc; opt
+#dfflibmap -liberty simple.lib
+abc -liberty simple.lib
+#techmap; opt
+#clean
+opt_clean
+
+stat -liberty simple.lib
+write_verilog synth.v
+write_blif synth.blif
+#show

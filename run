@@ -1,0 +1,7 @@
+#!/bin/bash
+
+yosys segment7.ys
+
+./nclify.py synth.blif synth2.blif
+
+yosys ncl.ys

@@ -1,0 +1,9 @@
+read_blif -wideports synth2.blif
+read_verilog ncl.v
+
+flatten
+opt
+
+delete NCL_INV NCL_AND2
+
+write_verilog synth2.v
