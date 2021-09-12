@@ -20,7 +20,7 @@ module NCL_AND2(
     output wire Y_f
 );
 
-TH34W2W2 x(
+TH34W22 x(
     .A(A_f),
     .B(B_f),
     .C(A_t),
