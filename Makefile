@@ -17,5 +17,8 @@ segment7.vcd: segment7.sim
 
 sim: segment7.vcd
 
+show: synth2.v ncl_sim.v
+	yosys -p "show segment7" synth2.v ncl_sim.v
+
 clean:
 	rm -f synth.v synth.blif synth2.v synth2.blif segment7.sim segment7.vcd
